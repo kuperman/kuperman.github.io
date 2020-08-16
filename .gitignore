@@ -1,0 +1,6 @@
+# skip vim swap files
+.sw[a-z]
+
+# skip other temp files
+*~
+.DS_Store

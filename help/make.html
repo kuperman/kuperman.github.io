@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<title>Using "make" and writing Makefiles</title>
+<link rev="made" href="mailto:Benjamin.Kuperman@oberlin.edu">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+<link type="text/css" rel="stylesheet" href="../CSS/help.css">
+</head>
+<body>
+
+<h1>Using "make" and writing Makefiles</h1>
+
+<p>
+<tt>make</tt> is a Unix tool that simplifies building programs when they are
+composed from many files, or building many programs simultaneously.  It is able
+to determine when source files have changed and rebuild only those components
+needed for an update.
+</p>
+
+<p>
+    This is just a quick overview, see the man page for more details.
+    A more complete reference can be found in the <a
+    href="http://www.gnu.org/software/make/manual/make.html">GNU make
+    manual</a>. 
+</p>
+
+<ul>
+    <li><a href="#using">Using Make</a></li>
+    <li><a href="#writing">Writing your own makefile</a></li>
+    <li><a href="#examples">Sample Makefiles</a></li>
+    <li><a href="#related">Related tools</a></li>
+</ul>
+
+<hr>
+
+<h2 id="using">Using Make</h2>
+<ol class="padded">
+    <li><b>Create a Makefile:</b> When you download many open source programs,
+        this is already done for you.  Inside this file is a list of
+        dependencies and rules for how to build the software.  If you add in
+        additional source files or programs, you may need to update this to keep
+        it up to date.</li>
+
+    <li><b>Edit source files</b></li>
+
+    <li><p><b>Run <tt>make</tt>:</b> All you need to do is run the program from the
+        command line without any arguments.</p>
+<pre class="boxed">
+% <span class="typed">make</span></pre>
+        
+        <p>
+            You can also specify a "target" or make use of multiple processors.
+        </p>
+
+<pre class="boxed">
+# compile a specific target
+
+% <span class="typed">make <i class="argument">target_name</i></span>
+
+# clean up things (rule needs to be in the Makefile)
+
+% <span class="typed">make clean</span>
+
+# use multiple processors (in this case 3)
+
+% <span class="typed">make -j 3</span>
+</pre>
+
+        </li>
+</ol>
+
+
+<h2 id="writing">Writing a Makefile</h2>
+<p>
+    While it may seem that Makefiles are a bit arcane, they can be readily
+    understood with just a little bit of information.
+</p>
+
+<ul class="padded">
+    <li>Lines beginning with a hash mark (<tt>#</tt>) are comments and are
+        ignored until the end of that line.</li> 
+
+    <li>Variables are in <tt>ALL_CAPS</tt> followed by an <tt>=</tt> sign.  They
+        usually come at the top of the file.</li>
+
+    <li>Use variables later in this format:  <tt>$(VAR_NAME)</tt> or
+        <tt>${VAR_NAME}</tt>. The surrounding parens/braces are required.</li>
+
+    <li>The general layout of a rule is as follows:
+    <pre class="boxed">
+    <code>
+    # comments if desired
+    target:  dependency1 dependency2 ...
+        &lt;tab&gt; command</code>
+    </pre>
+        <ul>
+            <li><b>target</b> is what you are trying to build.  This might be
+                the name of an executable, and object file, or a class file.</li>
+
+            <li><b>dependency1</b> and so forth are the things that are used to
+                build the target.  If they change, then it will rebuild it.</li>
+
+            <li><b>&lt;tab&gt;</b> is an actual tab character.  If your editor
+                changes these to spaces, then it will not work!</li>
+
+            <li><b>command</b> is the instructions to be done.  You can have
+                multiple lines of these, but they all must be indented with a
+                tab.</li>
+        </ul>
+    </li>
+</ul>
+
+<h2 id="examples">Sample Makefiles</h2>
+<p>
+    Here is a simple makefile to build a C program.
+</p>
+<pre class="boxed">
+<code>
+# build a program from 2 files and one shared header
+CC = gcc
+CFLAGS = -g
+
+program: source1.c source2.c
+	$(CC) $(CFLAGS) -o program source1.c source2.c 
+</code>
+</pre>
+
+<p>
+    This is OK for a small program, but you can only recompile the parts that
+    have changed with just a few changes. 
+</p>
+<pre class="boxed">
+<code>
+# build a program from 2 files and one shared header
+CC = gcc
+CFLAGS = -g
+
+source1.o: source1.c
+	$(CC) $(CFLAGS) -c source1.c
+
+source2.o: source2.c
+	$(CC) $(CFLAGS) -c source2.c
+
+program: source1.o source2.o
+	$(CC) $(CFLAGS) -o program source1.o source2.o 
+</code>
+</pre>
+
+<p>
+If you are using the proper variables (e.g., <tt>CC</tt> and
+<tt>CFLAGS</tt>), then you can take advantage of make's builtin rules for
+creating object files.  For example, it knows how to properly make a .o
+file from a .c file.  Run <tt>make --print-data-base</tt> to see all the
+builtin rules.
+</p>
+
+<p>
+    This means you can shorten the above makefile down to just one
+    specified build rule, with the rest being implicit. (I've added some
+    additional debugging in to the compiler flags.)
+</p>
+<pre class="boxed">
+<code>
+# build a program from 2 files and one shared header
+CC = gcc
+CFLAGS = -g -Wall -pedantic
+
+program: source1.o source2.o
+	$(CC) $(CFLAGS) -o program source1.o source2.o 
+</code>
+</pre>
+
+<p>
+    There are also a variety of <a href="http://www.gnu.org/software/make/manual/make.html#Automatic-Variables">automatic variables</a> that make uses when evaluating a
+    rule.  Two that I find useful are:
+</p>
+<ul>
+    <li><tt>$@</tt> which is the target for the rule</li>
+    <li><tt>$^</tt> which is the full list of dependencies</li>
+</ul>
+<p>
+    So we can further simplify things by writing:
+</p>
+
+<pre class="boxed">
+<code>
+# build a program from 2 files and one shared header
+CC = gcc
+CFLAGS = -g -Wall -pedantic
+
+program: source1.o source2.o
+	$(CC) $(CFLAGS) -o $@ $^ 
+</code>
+</pre>
+
+<p>
+    For other languages, other variables are used.  For example:
+</p>
+<ul>
+    <li><tt>CXX</tt> - what C++ compiler to use</li>
+    <li><tt>CXXFLAGS</tt> - options to pass to the C++ compiler</li>
+    <li><tt>LDFLAGS</tt> - flags to use during the linking stage (.o to executable)</li>
+</ul>
+
+<!-- TODO: Continue from here! -->
+        
+<h2 id="related">Related tools</h2>
+
+<ul>
+    <li><tt>gcc -MM</tt> - outputs a rule for make describing the dependencies of the source file</li>
+    <li><tt>makedepend</tt> - program that auto generates dependencies and adds them to the Makefile</li>
+    <li><a href="http://www.cmake.org/">CMake</a></li>
+</ul>
+
+<hr>
+<address><small>Last Modified: October 06, 2011 - <a href="mailto:Benjamin.Kuperman@oberlin.edu">Benjamin A. Kuperman</a><a href="http://www.vim.org/"><img src="../images/vim.jpg" style="float: right;" alt="VI Powered"></a></small></address>
+<!-- Created: October 11, 2007 -->
+
+</body>
+</html>
+

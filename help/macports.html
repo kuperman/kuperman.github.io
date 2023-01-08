@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<title>MacPort hints</title>
+<link rev="made" href="mailto:Benjamin.Kuperman@oberlin.edu">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link type="text/css" rel="stylesheet" href="../CSS/help.css">
+</head>
+<body>
+
+<h1>MacPort hints</h1>
+<p>
+    A work in progress.  Right now just a repository of notes to myself.
+</p>
+
+<h2>Useful links</h2>
+<ul>
+    <li><a href="http://www.macports.org/">http://www.macports.org/</a></li>
+    <li><a href="http://trac.macosforge.org/projects/macports/wiki">http://trac.macosforge.org/projects/macports/wiki</a></li>
+    <li><a href="http://www.macosxhints.com/article.php?story=20061228064442549">http://www.macosxhints.com/article.php?story=20061228064442549</a></li>
+</ul>
+
+<h2>Updating things</h2>
+<pre class="boxed">
+<code>
+sudo port -d selfupdate     # update baseline
+sudo port -d sync
+</code>
+</pre>
+
+<h3>Checking for old things</h3>
+<pre class="boxed">
+<code>
+port outdated               # tell me if anything is old
+</code>
+</pre>
+
+<h3>Fixing them</h3>
+<pre class="boxed">
+<code>
+sudo port upgrade outdated  # and fix it!
+</code>
+</pre>
+
+<h3>Making a local update</h3>
+<pre class="boxed">
+<code>
+<a href="https://trac.macports.org/wiki/howto/Upgrade">How to upgrade a port's version locally</a>
+</code>
+</pre>
+
+<h2>Removing old port cruft</h2>
+<pre class="boxed">
+<code>sudo port -f uninstall inactive</code>
+</pre>
+
+<hr>
+<address><small>Last Modified: August 24, 2008 - <a href="mailto:Benjamin.Kuperman@oberlin.edu">Benjamin A. Kuperman</a><a href="http://www.vim.org/"><img src="../images/vim.jpg" style="float: right;" alt="VI Powered"></a></small></address>
+<!-- Created: June 11, 2007 -->
+
+</body>
+</html>
+

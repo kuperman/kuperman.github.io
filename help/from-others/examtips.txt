@@ -1,0 +1,151 @@
+----------------------------------------------------
+A few words about writing answers to test questions:
+----------------------------------------------------
+* Your solutions must be complete and they must be valid C code:
+
+< =  is a C operator,  <  is not
+		       -
+
+2 * (x + 4) / z  is valid C,    2(x + 4)  is not
+				--------
+				   z
+
+* Use correct C syntax for function definitions, function prototypes, if, 
+  for, while, switch stmts, function calls, assignment statements, ...
+
+* minor syntax errors are okay if it is clear what you meant:
+	missing a '}' or a ';' if I can tell where you meant it to go 
+
+	if you put each statement on a separate line, then I can figure
+	out what you meant if you are missing a ';'
+
+	if you draw lines from the beginning of a body to the end, then
+	I can tell what you meant if you have a miss matched number of { 
+	and }'s
+
+	 ------	if ( blah() ) 
+         |		printf("oops, I forgot curly brackets here,");	
+         |		printf("but my professor can figure out what I meant");
+         |		printf("because I drew in these lines showing");
+         |		printf("where I meant the if block and its");
+         |		printf("corresponding else block to be");
+	 |
+	 |          --- if(x == 6) {
+	 |          |       printf("the compiler would match the else to"
+	 |          |               " this if stmt, which is not what I meant");
+	 |          --- }
+	 ======	else {
+         |		printf("hello there\n"); 
+         | 
+	 ------	}
+
+
+* be careful about argument's type and operators
+
+   int x;
+   float result;
+
+
+	result = 3 / x;   /* this is zero when x is greater than 3 */ 
+
+	result = 3 % result;  /* mod is an int operator, it can't take float 
+				 operands (result is a float) */
+
+* don't worry about using good variable names (its fine if you do)
+
+* don't worry about comments.  you can add them if you think it will help 
+  me understand your solution, but comments will not count as part of the
+  grade on a problem.
+
+* write legibly.  if I can't tell what you wrote, I'm not going to guess. 
+
+-----------------------
+Test taking suggestions
+-----------------------
+(0) read the problem carefully:  
+
+    * if it says write a PROGRAM this means you need to write an entire 
+      program (#include's, #define's, main function, function prototypes and 
+		definitions)
+
+    * if it says write a FUNCTION that takes an integer and a real value and
+      returns the real value raised to the integer's value power, then 
+      this means that you need only write the function (not an entire program), 
+      and that your function should take two parameters, one int and one 
+      float (or double), and it should return a float (or double) value.
+
+    * if it says CODE, it is asking you just to write the sequence of C stmts
+      that answer the question.  You do not need to write a complete function,
+      nor do you need to write a complete program.  However, you should show
+      the declaration of all variables you use in your code, so that I know
+      what their type is and can correctly evaluate any expressions.
+
+(1) if you get stuck on a problem, move on to another one and come back
+    to it later
+
+(2) if you don't know how to implement the whole problem, do the parts 
+    that you can
+
+    (ex)  write a FUNCTION that takes two integer values (n and x) and returns
+	  n to the x power.
+
+	  int Power(int n, int x) {
+					I have no idea how to implement
+		int result;	        power, but I do know how to write	
+		??		  	a function that takes 2 ints and	
+		return (result);        returns an int (or better yet a float)	
+	  } 
+           
+     (ex) write CODE to print the following pattern of stars
+
+
+	  * * * *	 		I know I need a loop	
+          * * *
+          * *				I think I need nested loops
+          *				where the outer one determines # lines
+	  				but I'm not so sure after that
+					
+	  for(i=0; i < 4; i++) {
+	      for(j=0; j ?? ; j++) {	I'm not sure about this, but I can
+		printf("* ");		at least get the nested loop structure
+	      }				and I know the outer loop controls
+	      printf("\n");		number of lines (4), and I know how 
+ 	  } 				to write a for loop that repeats 4 times
+					I'm pretty sure the inner loop controls
+					how many *'s are printed on each line,
+					but I don't remember how to get a
+					decreasing amount each outer loop 
+					iteration
+
+(3) draw lines to indicate the body of an if stmt, for loop, while loop, etc.
+    This way if your brackets don't match up I know what you ment
+
+	if( x > 1) 	
+		if(x % 100 == 10) 			// this is the dangling
+			printf("x divisible by 10);	// else problem
+	else 
+		printf("x is less than 1");
+
+    If you don't explicitly show me that you ment the 'else' to go with 
+    the first 'if' (not the second one with which it really would be 
+    associated), then I'm not going to guess that you ment to associate it 
+    with the outer one (I'm going to act like a compiler unless you make it 
+    clear that you ment something different from how the compiler would 
+    compile it).
+	   
+(4) If a question has several parts, and you can't get one of them, you 
+    can often still get the rest
+
+	(a) write a function that does X
+
+	(b) write a program that calls the function you wrote in part a to 
+	    compute Y 
+
+	    	even if I didn't get part (a), I can still write a program 
+		that contains a call to the function from part (a)
+
+(5) if all else fails, write in psuedo code how you would solve the problem
+
+	"I know I need a loop here to iterate though 1-to-n additions"
+	(actually, if you know this much you could write the for loop to
+	do this with the loop body missing, but you get the idea)

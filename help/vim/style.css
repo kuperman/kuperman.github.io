@@ -1,0 +1,64 @@
+/* this is a modified version of eric a. meyer's pure */
+/* css popups page: http://www.meyerweb.com/eric/css/edge/popups/demo.html */
+
+body {position: relative; background: #c8c8ff; margin: 0; padding: 0;}
+
+div#links {position: absolute; top: 81px; left: 0; 
+           width: 200px; height: 700px; font: 14px Verdana, sans-serif; z-index: 100;}
+div#links a {display: block; text-align: right; font: bold 1em sans-serif; 
+   padding: 5px 10px; margin: 0 0 1px; border-width: 0; 
+   text-decoration: none; color: #000; background: #ddd;
+   border-right: 5px solid #888;}
+div#links a:hover {color: #c8c8ff; background: #12127D;
+   border-right: 5px solid white;}
+
+div#content {position: absolute; top: 26px; left: 201px; right: 25px;
+   color: #c8c8ff; background: #12127d; 
+   font: 18px Verdana, serif; padding: 10px; 
+   border: solid 5px #444;}
+div#content p {margin: 0 1em 1em;}
+div#content h3 {margin-bottom: 0.25em;}
+
+h1 {margin: -9px -9px 0.5em; padding: 15px 0 5px; text-align: right; 
+    background: #558; color: #c8c8ff; letter-spacing: 0.5em; text-transform: lowercase; 
+		font: bold 28px sans-serif; height: 28px; vertical-align: middle; white-space: nowrap;}
+h2 {font: sans-serif;}
+dt {font-weight: bold;}
+dd {margin-bottom: 0.66em;}
+div#content a:link {color: white;}
+div#content a:visited {color: #BBC;}
+div#content a:link:hover {color: #FF0;}
+div#content a:visited:hover {color: #CC0;}
+code, pre {color: #ffffff; font: 120% monospace}
+pre {margin-left: 2.5em;}
+kbd {color: #ffff00;}
+
+#pagehome a#linkhome, 
+#pagehelp a#linkhelp, 
+#pagevariables a#linkvariables, 
+#pagecompatible a#linkcompatible, 
+#pagemodelines a#linkmodelines, 
+#pagecompletion a#linkcompletion, 
+#pagesearching a#linksearching, 
+#pageselection a#linkselection, 
+#pagemarkers a#linkmarkers, 
+#pageindenting a#linkindenting, 
+#pagereformatting a#linkreformatting, 
+#pagefolding a#linkfolding, 
+#pagewindows a#linkwindows, 
+#pagestream a#linkstream, 
+#pagetags a#linktags, 
+#pagemakefiles a#linkmakefiles, 
+#pagemapping a#linkmapping, 
+#pageregisters a#linkregisters, 
+#pagespelling a#linkspelling, 
+#pageplugins a#linkplugins, 
+#pagesilly a#linksilly, 
+#pageetc a#linketc,
+#pagevim7 a#linkvim7 {
+ background: #888; color: #ddd;
+ border-right: 5px solid #000;
+ border-top: 1px solid #000;
+ border-bottom: 1px solid #000;
+ border-left: 1px solid #000;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+			"http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+
+<title>vim tips and tricks: mappings</title>
+<link rel=stylesheet type="text/css" href="style.css">
+</head>
+<body id="pagemapping">
+
+<div id="links">
+<a href="home.html" id=linkhome>home</a>
+<a href="help.html" id=linkhelp>help</a>
+<a href="variables.html" id=linkvariables>variables</a>
+<a href="compatible.html" id=linkcompatible>vi compatibility</a>
+<a href="modelines.html" id=linkmodelines>modelines</a>
+<a href="completion.html" id=linkcompletion>word & line completion</a>
+<a href="searching.html" id=linksearching>searching</a>
+<a href="selection.html" id=linkselection>text selection</a>
+<a href="markers.html" id=linkmarkers>markers</a>
+<a href="indenting.html" id=linkindenting>indenting</a>
+<a href="reformatting.html" id=linkreformatting>reformatting</a>
+<a href="folding.html" id=linkfolding>folding</a>
+<a href="windows.html" id=linkwindows>multiple windows</a>
+<a href="stream.html" id=linkstream>editing a stream</a>
+<a href="tags.html" id=linktags>tags</a>
+<a href="makefiles.html" id=linkmakefiles>makefiles</a>
+<a href="mapping.html" id=linkmapping>mapping</a>
+<a href="registers.html" id=linkregisters>registers</a>
+<a href="spelling.html" id=linkspelling>spelling</a>
+<a href="plugins.html" id=linkplugins>plugins</a>
+<a href="silly.html" id=linksilly>silly stuff</a>
+<a href="etc.html" id=linketc>etc</a>
+<a href="vim7.html" id=linkvim7>vim7</a>
+</div>
+
+<div id="content">
+<h1><kbd>vim</kbd> tips and tricks</h1>
+
+
+<h2>mapping</h2>
+
+<p>
+Use mappings to save typing for things you frequently type.
+The first one below, when typing in insert mode, changes every occurrence
+of <kbd>;so</kbd> to <kbd>System.out.println();</kbd> <em>and</em> leaves
+you in insert mode between the parentheses! 
+
+<pre>
+ imap ;so System.out.println();&#60left&#62&#60left&#62
+ imap ;ne &#60esc&#62/;&#60cr&#62a
+ vmap &#60buffer&#62 ;bo "zdi&#60B&#62&#60c-r&#62z&#60/B&#62&#60esc&#62
+</pre>
+
+<p>
+The second one above, while in insert mode, moves you to the end
+of the next line when you type <kbd>;ne</kbd>. The last one puts bold
+html tags around something you have visually selected.
+
+<p>
+These usually go in your <kbd>.vimrc</kbd> file. You can even
+have certain mappings loaded based on the type of file you are editing.
+
+<p>
+Quiz: what do these do? :)
+
+<pre>
+nnoremap &#60F6&#62 &#60C-W&#62w
+nnoremap &#60S-F6&#62 &#60C-W&#62W
+
+map &#60C-L&#62 :noh&#60CR&#62:redraw!&#60CR&#62
+</pre>
+
+<!-- this "content" div was started in the header -->
+</div>
+</body>
+</html>
+

@@ -1,0 +1,12 @@
+Simple Unix commands
+--------------------
+pwd
+cd
+mkdir
+ls
+chmod
+exit
+rm
+rmdir
+cp
+mv

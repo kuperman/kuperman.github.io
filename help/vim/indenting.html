@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+			"http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+
+<title>vim tips and tricks: indenting</title>
+<link rel=stylesheet type="text/css" href="style.css">
+</head>
+<body id="pageindenting">
+
+<div id="links">
+<a href="home.html" id=linkhome>home</a>
+<a href="help.html" id=linkhelp>help</a>
+<a href="variables.html" id=linkvariables>variables</a>
+<a href="compatible.html" id=linkcompatible>vi compatibility</a>
+<a href="modelines.html" id=linkmodelines>modelines</a>
+<a href="completion.html" id=linkcompletion>word & line completion</a>
+<a href="searching.html" id=linksearching>searching</a>
+<a href="selection.html" id=linkselection>text selection</a>
+<a href="markers.html" id=linkmarkers>markers</a>
+<a href="indenting.html" id=linkindenting>indenting</a>
+<a href="reformatting.html" id=linkreformatting>reformatting</a>
+<a href="folding.html" id=linkfolding>folding</a>
+<a href="windows.html" id=linkwindows>multiple windows</a>
+<a href="stream.html" id=linkstream>editing a stream</a>
+<a href="tags.html" id=linktags>tags</a>
+<a href="makefiles.html" id=linkmakefiles>makefiles</a>
+<a href="mapping.html" id=linkmapping>mapping</a>
+<a href="registers.html" id=linkregisters>registers</a>
+<a href="spelling.html" id=linkspelling>spelling</a>
+<a href="plugins.html" id=linkplugins>plugins</a>
+<a href="silly.html" id=linksilly>silly stuff</a>
+<a href="etc.html" id=linketc>etc</a>
+<a href="vim7.html" id=linkvim7>vim7</a>
+</div>
+
+<div id="content">
+<h1><kbd>vim</kbd> tips and tricks</h1>
+
+
+<h2>indenting</h2>
+
+<p>
+Some variables you might want to set:
+</p>
+
+<pre>
+ :set tabstop=8     - tabs are at proper location
+ :set expandtab     - don't use actual tab character (ctrl-v<tab>)
+ :set shiftwidth=4  - indenting is 4 spaces
+ :set autoindent    - turns it on
+ :set smartindent   - does the right thing (mostly) in programs
+ :set cindent       - stricter rules for C programs
+</pre>
+
+<p>
+I like having auto on, but smart does funny things based on keywords.
+</p>
+
+<p>
+To indent the current line, or a visual block:
+
+<pre>
+ctrl-t, ctrl-d  - indent current line forward, backwards 
+                  (insert mode)
+visual &gt or &lt   - indent block by sw (repeat with <kbd>.</kbd> )
+</pre>
+
+<p>
+To stop indenting when pasting with the mouse, add this to your <kbd>.vimrc</kbd>:
+
+<pre>
+:set pastetoggle=&#60f5&#62
+</pre>
+
+<p>
+then try hitting the F5 key while in insert mode (or just <kbd>:set paste</kbd>).
+
+<!-- this "content" div was started in the header -->
+</div>
+</body>
+</html>
+

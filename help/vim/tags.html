@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+			"http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+
+<title>vim tips and tricks: tags</title>
+<link rel=stylesheet type="text/css" href="style.css">
+</head>
+<body id="pagetags">
+
+<div id="links">
+<a href="home.html" id=linkhome>home</a>
+<a href="help.html" id=linkhelp>help</a>
+<a href="variables.html" id=linkvariables>variables</a>
+<a href="compatible.html" id=linkcompatible>vi compatibility</a>
+<a href="modelines.html" id=linkmodelines>modelines</a>
+<a href="completion.html" id=linkcompletion>word & line completion</a>
+<a href="searching.html" id=linksearching>searching</a>
+<a href="selection.html" id=linkselection>text selection</a>
+<a href="markers.html" id=linkmarkers>markers</a>
+<a href="indenting.html" id=linkindenting>indenting</a>
+<a href="reformatting.html" id=linkreformatting>reformatting</a>
+<a href="folding.html" id=linkfolding>folding</a>
+<a href="windows.html" id=linkwindows>multiple windows</a>
+<a href="stream.html" id=linkstream>editing a stream</a>
+<a href="tags.html" id=linktags>tags</a>
+<a href="makefiles.html" id=linkmakefiles>makefiles</a>
+<a href="mapping.html" id=linkmapping>mapping</a>
+<a href="registers.html" id=linkregisters>registers</a>
+<a href="spelling.html" id=linkspelling>spelling</a>
+<a href="plugins.html" id=linkplugins>plugins</a>
+<a href="silly.html" id=linksilly>silly stuff</a>
+<a href="etc.html" id=linketc>etc</a>
+<a href="vim7.html" id=linkvim7>vim7</a>
+</div>
+
+<div id="content">
+<h1><kbd>vim</kbd> tips and tricks</h1>
+
+
+<h2>tags</h2>
+
+<p> 
+Using tags makes it easier to jump to certain parts of your programs.
+First run <kbd>ctags</kbd> from the UNIX command line on your source files
+(e.g., <kbd>ctags prog.c</kbd> or <kbd>ctags -R</kbd> to recurse) to generate a
+"tags" file, then use these while editing your source files:
+
+<pre>
+ :tag TAB            - list the known tags
+ :tag function_name  - jump to that function
+ ctrl-t   - goes to previous spot where you called :tag
+ ctrl-]   - calls :tag on the word under the cursor        
+ :ptag    - open tag in preview window (also ctrl-w })
+ :pclose  - close preview window
+</pre>
+
+<!-- this "content" div was started in the header -->
+</div>
+</body>
+</html>
+

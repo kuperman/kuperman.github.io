@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+			"http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+
+<title>vim tips and tricks: plugins</title>
+<link rel=stylesheet type="text/css" href="style.css">
+</head>
+<body id="pagevim7">
+
+<div id="links">
+<a href="home.html" id=linkhome>home</a>
+<a href="help.html" id=linkhelp>help</a>
+<a href="variables.html" id=linkvariables>variables</a>
+<a href="compatible.html" id=linkcompatible>vi compatibility</a>
+<a href="modelines.html" id=linkmodelines>modelines</a>
+<a href="completion.html" id=linkcompletion>word & line completion</a>
+<a href="searching.html" id=linksearching>searching</a>
+<a href="selection.html" id=linkselection>text selection</a>
+<a href="markers.html" id=linkmarkers>markers</a>
+<a href="indenting.html" id=linkindenting>indenting</a>
+<a href="reformatting.html" id=linkreformatting>reformatting</a>
+<a href="folding.html" id=linkfolding>folding</a>
+<a href="windows.html" id=linkwindows>multiple windows</a>
+<a href="stream.html" id=linkstream>editing a stream</a>
+<a href="tags.html" id=linktags>tags</a>
+<a href="makefiles.html" id=linkmakefiles>makefiles</a>
+<a href="mapping.html" id=linkmapping>mapping</a>
+<a href="registers.html" id=linkregisters>registers</a>
+<a href="spelling.html" id=linkspelling>spelling</a>
+<a href="plugins.html" id=linkplugins>plugins</a>
+<a href="silly.html" id=linksilly>silly stuff</a>
+<a href="etc.html" id=linketc>etc</a>
+<a href="vim7.html" id=linkvim7>vim7</a>
+</div>
+
+<div id="content">
+<h1><kbd>vim</kbd> tips and tricks</h1>
+
+
+<h2>vim 7</h2>
+
+<p>
+Ben has installed a testing version of vim. To use it, just type <kbd>vim7</kbd>
+instead of <kbd>vim</kbd> (or <kbd>gvim7</kbd> instead of <kbd>gvim</kbd>). One 
+nice thing about this new version is spell checking. Below are some of Ben's notes
+on how to use spell checking with <kbd>vim7</kbd>.
+
+<ul>
+<li> add this to your .vimrc:
+<pre>
+if has("spell")
+  " turn spelling on by default
+  set spell
+
+  " toggle spelling with F4 key
+  map &#60F4&#62 :set spell!&#60CR&#62&#60Bar&#62:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)&#60CR&#62
+
+  " they were using white on white
+  highlight PmenuSel ctermfg=black ctermbg=lightgray
+
+  " limit it to just the top 10 items
+  set sps=best,10                    
+endif
+</pre>
+<li> to have a personal wordlist, make a directory called <kbd>~/.vim/spell</kbd>
+<li> you can manually add things your personal wordlist (<kbd>~/.vim/spell/en.latin1.add</kbd>):
+<pre>
+    printf(              (so printf is invalid, but printf( is ok) 
+    nextLine()
+    ArrayList/=          (the /= means always match case)
+    focussed/!           (the /! says treat this as a misspelling)
+</pre>
+<li> if you manually add to your wordlist, you need to regenerate it:
+<pre>
+    :mkspell! ~/.vim/spell/en.latin1.add
+</pre>
+<li> some useful keys for spellchecking:
+<pre>
+  ]s       - forward to misspelled/rare/wrong cap word
+  [s       - backwards
+
+  ]S       - only stop at misspellings
+  [S       - in other direction
+
+  zG       - accept spelling for this session
+  zg       - accept spelling and add to personal dictionary
+
+  zW       - treat as misspelling for this session
+  zw       - treat as misspelling and add to personal dictionary
+
+  z=       - show spelling suggestions
+
+  :spellr  - repeat last spell replacement for all words in window
+</pre>
+</ul>
+
+<!-- this "content" div was started in the header -->
+</div>
+</body>
+</html>
+

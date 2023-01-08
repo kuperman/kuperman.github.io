@@ -1,0 +1,51 @@
+Commonly used gdb commands
+--------------------------
+gdb also understands abreviations of commands, so you can just type up to 
+the unique part of a command name ("cont" for "continue", or "p" for "print")
+
+help                  List classes of all gdb commands
+help <topic>          Shows help available for topic or command
+
+where     	      Shows stack: sequence of function calls executed so far
+(or backtrace)        (good for pinpointing location of a program crash)
+(or bt)
+
+frame                 Shows all stack frames
+frame <frame-num>     Sets current stack frame to <frame-num>
+
+run                   Starts program at the beginning
+
+break <line>          Sets breakpoint at line number <line>
+break <func-name>     Sets breakpoint at beginning of function <func-name>
+break main            Sets breakpoint at beginning of program
+continue              Continues execution from breakpoint
+
+condition <bp-num> <exp>   Sets breakpoint number <bp-num> to break only if
+                           conditional expression <exp> is true
+
+info break            Shows current breakpoints
+disable [breakpoints] [bnums ...]  Disable one or more breakpoints
+enable [breakpoints] [bnums ...]   Enable one or more breakpoints 
+clear <line>          Clears breakpoint at line number <line>
+clear <func-name>     Clears breakpoint at beginning of function <func-name>
+delete <bp-num>       Deletes breakpoint number <bp-num>
+delete                Deletes all breakpoints
+
+step (or s)           Executes next line of program (steping into functions)
+step <count>          Executes next <count> lines of program
+next (or n)           Like step, but treats a function call as a single
+next <count>            instruction
+until <line>          Executes program until line number <line>
+
+print <exp> (or inspect <exp>  Displays the value of expression <exp>
+display <exp>         Automatic display of <exp> each time a breakpoint reached
+whatis <exp>          Shows data type of expression <exp>
+info locals           Shows local variables in current stack frame
+set variable <variable> = <exp>   Sets variable <variable> to expression <exp>
+
+list                  Lists next few lines of program
+list <line>           Lists lines around line number <line> of program
+list <start> <end>    Lists line numbers <start> through <end>
+list <func-name>      Lists lines at beginning of function <func-name>
+
+quit                  Quits gdb

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+			"http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+
+<title>vim tips and tricks: completion</title>
+<link rel=stylesheet type="text/css" href="style.css">
+</head>
+<body id="pagecompletion">
+
+<div id="links">
+<a href="home.html" id=linkhome>home</a>
+<a href="help.html" id=linkhelp>help</a>
+<a href="variables.html" id=linkvariables>variables</a>
+<a href="compatible.html" id=linkcompatible>vi compatibility</a>
+<a href="modelines.html" id=linkmodelines>modelines</a>
+<a href="completion.html" id=linkcompletion>word & line completion</a>
+<a href="searching.html" id=linksearching>searching</a>
+<a href="selection.html" id=linkselection>text selection</a>
+<a href="markers.html" id=linkmarkers>markers</a>
+<a href="indenting.html" id=linkindenting>indenting</a>
+<a href="reformatting.html" id=linkreformatting>reformatting</a>
+<a href="folding.html" id=linkfolding>folding</a>
+<a href="windows.html" id=linkwindows>multiple windows</a>
+<a href="stream.html" id=linkstream>editing a stream</a>
+<a href="tags.html" id=linktags>tags</a>
+<a href="makefiles.html" id=linkmakefiles>makefiles</a>
+<a href="mapping.html" id=linkmapping>mapping</a>
+<a href="registers.html" id=linkregisters>registers</a>
+<a href="spelling.html" id=linkspelling>spelling</a>
+<a href="plugins.html" id=linkplugins>plugins</a>
+<a href="silly.html" id=linksilly>silly stuff</a>
+<a href="etc.html" id=linketc>etc</a>
+<a href="vim7.html" id=linkvim7>vim7</a>
+</div>
+
+<div id="content">
+<h1><kbd>vim</kbd> tips and tricks</h1>
+
+
+<h2>word & line completion</h2>
+
+<p>
+Typing is a pain! In <em>insert</em> mode, try:
+</p>
+
+<pre>
+ctrl-n, ctrl-p    - next/previous word completion 
+                    (similar word in current file)
+
+ctrl-x ctrl-l (ctrl-n/p)    - line completion
+
+:set dictionary=/usr/share/dict/words
+ctrl-x ctrl-k     - dictionary completion
+</pre>
+
+<p>
+also
+
+<pre>
+ctrl-w      - erases word (insert mode...
+ctrl-u      - erases line  ...or on command line)
+</pre>
+
+<!-- this "content" div was started in the header -->
+</div>
+</body>
+</html>
+

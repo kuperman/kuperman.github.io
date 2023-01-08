@@ -1,0 +1,121 @@
+Some useful UNIX commands to know
+---------------------------------
+
+pwd		"print working directory" --  prints out the full pathname
+		of the current directory you are in.
+
+cd [pathname]	"change directory" -- changes the current directory to be
+		the directory specified by [pathname].
+		Examples:  cd sub1
+			   cd /home/joeschmo
+
+cd ..		change to the current directory's parent directory (i.e.,
+		move "up" one level in the filesystem hierarchy)
+
+cd		change to your top-level "home" directory
+
+ls		list files in the current directory (except those whose
+		names begin with ".")
+
+ls -l		list files using "long" format, showing file permissions,
+		ownership, size, modification date, etc.
+
+ls -a		list all files in the current directory, including files
+		whose names begin with "."
+
+ls [pathname]	list files in the directory specified by [pathname]
+
+ls .		list files in the current directory
+
+ls ..		list files in the current directory's parent directory
+
+man [command]	print manual pages for a command.
+		Example:  man ls
+
+mv [p1] [p2]	rename (move) file specified by pathname [p1] to be [p2]
+		Examples:  mv oldfile newfile (renames oldfile to be newfile)
+			   mv sub1/oldfile .. (moves oldfile to a different directory)
+
+mv [d1] [d2]   rename (move) entire directory [d1] to be [d2]
+
+cp [p1] [p2]	make a new copy of the file specified by pathname [p1],
+		and call the new copy [p2]
+		Examples:  cp oldfile newfile (afterwards, oldfile still exists)
+
+rm [pathname]	delete file specified by [pathname]
+
+mkdir [dir]	create a new directory called [dir]
+
+rmdir [dir]	remove directory specified by pathname [dir] (which must be empty)
+
+who		find out who else is logged onto the system
+
+w		find out who is on the system and what they're doing
+
+finger [user]   find out information about a specific user
+
+cat [file]	print out contents of [file] on the screen
+
+cat [f1] [f2]	concatenate the contents of the files [f1] and [f2] and print
+		the result on the screen
+		Example:  cat data1 data2
+
+cat [f1] [f2] > [f3]	concatenate the contents of files [f1] and [f2] and
+			store the result in a new file called [f3] (if [f3]
+			already exists then its contents are overwritten)
+			Example:  cat data1 data2 > alldata
+
+cat [f1] [f2] >> [f3]	concatenate the contents of files [f1] and [f2] and
+			append the result to the end of file [f3] (without
+			overwriting any existing data in [f3])
+
+more [file]	print out contents of [file] on the screen a page
+		at a time, pausing at each screenful
+
+less [file]	another pager (like more) for viewing files a page at a time
+
+chmod 700 [dir]   change permissions on directory [dir] so that it is accessible
+	          only to the owner. 
+chmod 600 [file]  change permissions on file [file] so that it is readable and
+		  writable to the owner. 
+
+chmod 755 [dir]   change permissions on directory [dir] so that it is readable
+		  to anyone (owner, group, and others), and writable by owner
+	  
+chmod 644 [file]  change permissions on file [file] so that it is readable
+		  to anyone (owner, group, and others), and writable by owner
+
+chmod [ugo]+[rwx] [file] set specific permissions to [file] for owner, group or
+			 others  (e.g. "chmod g+r blah" sets read permission 
+			 for group on file "blah")
+		
+chmod [ugo]-[rwx] [file] remove specific permissions from [file] for owner, 
+		 	 group or others (e.g. "chmod o-rw blah" removes read 
+			 and write permission for others from file "blah") 
+
+passwd		change your account's password
+
+exit/logout	log off the system
+
+date		show the current date and time
+
+lpr [file]	print out [file] on the local printer (the printer in the Sun
+                Lab is called "TheDicer")
+
+enscript -2rG [file]	print out [file] nicely in two-column format in
+			"landscape" orientation (paper rotated clockwise by
+			90 degrees, like this printout)
+
+lpq		show the printer requests currently being processed (each
+                request is assigned a "job number" and goes to the "printer
+                queue", where it waits until it has finished printing)
+
+lprm [job#]	remove job number [job#] from the printer queue
+
+mail/mailx	a very primitive UNIX program for reading/sending mail
+		(not recommended)
+
+elm		a better mail program, but still not so great 
+
+pine		probably the easiest of the UNIX mail programs to learn and
+		use (recommended)

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<title>Procmail hints for OCCS</title>
+<link rev="made" href="mailto:Benjamin.Kuperman@oberlin.edu">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link type="text/css" rel="stylesheet" href="../CSS/help.css">
+</head>
+<body>
+
+<h1>Procmail hints</h1>
+
+<p>
+<a href="http://www.procmail.org/">Procmail</a> is a very useful tool for
+processing and filtering your mail.  On OCCS, new accounts are created with a
+few simple procmail rules included.  However, you might want to add more in
+and/or change things around.
+</p>
+
+<h2>Basic elements</h2>
+<p>
+    Procmail is run automatically as part of the normal mail delivery process.
+    You can control the behavior of procmail by creating/modifying a special
+    file called <tt>.procmailrc</tt>.
+</p>
+<p>
+    Here is what a sample file looks like:
+</p>
+<pre class="boxed">
+<code>
+SHELL=/bin/sh
+MAILDIR=$HOME/Mail	# make sure this exists!
+
+# Anything with a score over 10 goes away.  15 would be safer, but in several
+# months of testing I have had zero false hits that scored between 10 and 15.
+:0:
+* ^X-Spam-Level: \*\*\*\*\*\*\*\*\*\*
+/dev/null
+
+# Forward everything else to your Oberlin account
+:0
+! Your.Name@oberlin.edu
+</code>
+</pre>
+
+<h3>Notes</h3>
+<p>
+<tt>SHELL</tt> is used when running programs from within procmail.
+<tt>MAILDIR</tt> is used as the prefix for where emails could be filed away
+(if delivered locally).
+</p>
+
+<p>
+You can enable logging by adding in a line just after the <tt>MAILDIR</tt>
+one:
+</p>
+<pre class="boxed">
+<code>
+LOGFILE=$HOME/.procmail.log
+</code>
+</pre>
+
+<p>
+    This is useful when you are trying to debug things or just to have a
+    record of mail received.  Beware that this file will continue growing!
+</p>
+
+<h2>Mail forwarding</h2>
+<p>
+    The last rule says to forward everything else to a different account.  You
+    can change the email address and have things sent somewhere else (e.g.,
+    GMail) or even to multiple accounts if you so choose.
+</p>
+<p>
+    Delete all three lines to end forwarding.  You now will need to check your
+    email on OCCS.
+</p>
+
+<h2>Spamassassin and Procmail</h2>
+<p>
+    The rule given above deletes everything with a spamassassin score of 10 or
+    more.  However, spamassassin might have marked things as being spam with a
+    lower score than that.  You can add in the following rule after the first
+    to file away probable spam messages to be gone through manually.
+</p>
+
+<pre class="boxed">
+<code>
+# Probable spam goes into Junk
+:0:
+* ^X-Spam-Flag: YES
+Junk
+</code>
+</pre>
+
+<p>
+Note that we don't have to specify where the mailbox is because of the value
+of <tt>MAILDIR</tt>.
+</p>
+
+<h2>Preventing mail deletion</h2>
+<p>
+    One thing I worry about is having mail from students be labeled as spam
+    and deleted.  To prevent this, I tell students to include the course
+    number in the subject line.
+</p>
+
+<pre class="boxed">
+<code>
+### make sure I get class mail
+:0:
+* ^Subject:.*(cs|csci).*[0-9][0-9][0-9]
+/var/mail/username
+</code>
+</pre>
+
+<p>
+    If this recipe is the first one in my <tt>.procmailrc</tt> file, then I
+    can guarantee none of their email gets lost.  Well, only if they can
+    follow directions!
+</p>
+
+<hr>
+<address><small>Last Modified: June 07, 2007 - <a href="mailto:Benjamin.Kuperman@oberlin.edu">Benjamin A. Kuperman</a><a href="http://www.vim.org/"><img src="../images/vim.jpg" style="float: right;" alt="VI Powered"></a></small></address>
+<!-- Created: June 07, 2007 -->
+
+</body>
+</html>
+

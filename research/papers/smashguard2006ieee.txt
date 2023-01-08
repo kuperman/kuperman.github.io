@@ -1,0 +1,17 @@
+
+
+@article{smashguard2006ieee,
+        author = {Hilmi {\"Ozdo\~gano\~glu} and T.N. Vijaykumar and Carla E. Brodley and Benjamin A. Kuperman},
+        journal = {{IEEE} Transactions on Computers},
+        month = oct,
+        number = {10},
+        pages = {1271--1285},
+        title = {{{SmashGuard}: A Hardware Solution to Prevent Security Attacks on the Function Return Address}},
+        volume = {55},
+        issn = {0018-9340},
+        publisher = {IEEE Computer Society},
+        address = {Washington, DC, USA},
+        year = {2006},
+        doi = {http://dx.doi.org/10.1109/TC.2006.166},
+}
+

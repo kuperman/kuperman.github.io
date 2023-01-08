@@ -1,0 +1,12 @@
+
+@techreport{bell2012browser-event-logging,
+	Address = {Berkeley, CA},
+	Author = {Owen Bell and Mark Allman and Benjamin Kuperman},
+	Institution = {International Computer Science Institute},
+	Month = jan,
+	Number = {TR-12-001},
+	Title = {On Browser-Level Event Logging},
+	Url = {http://www.icsi.berkeley.edu/cgi-bin/pubs/publication.pl?ID=3228},
+	Year = 2012,
+}
+

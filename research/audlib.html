@@ -1,0 +1,298 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<title>Audlib - security wrapper to generate audit information</title>
+<link rev="made" href="mailto:Benjamin.Kuperman@oberlin.edu">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link rel=stylesheet type="text/css" href="../CSS/links.css">
+<link rel=stylesheet type="text/css" href="../CSS/home.css">
+
+<style type="text/css">
+<!--
+
+body {
+    margin: 1em;
+    /* font-size: small; */
+}
+
+h1 {
+    text-align: center;
+}
+
+#content h2,
+#content h3,
+#content p,
+#content li,
+#content ol,
+#content ul {
+    margin: 0.5em;
+}
+#content li {
+    margin-left: 1.5em;
+}
+
+a:link,
+a:visited { text-decoration: underline; }
+
+h2.newsection {
+    border-top: thin solid #990000;
+    padding-top: 0.5em;
+}
+
+.boxed {
+    border: thin solid black;
+    background-color: #ffffaa;
+    margin: 1em;
+    padding: 0.5em;
+}
+-->
+</style>
+
+</head>
+<body>
+
+<h1>Audlib - security wrapper to generate audit information</h1>
+
+<div id="container">
+<div id="menu">
+    <ul>
+        <li><a href="#content">Audlib Home</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#readme">README</a></li>
+        <li><a href="#papers">Related Papers</a></li>
+        <li><a href="#acks">Credits and Thanks</a></li>
+    </ul>
+</div>  <!-- menu -->
+
+<div id="content">
+<h2 id="overview">Overview</h2>
+<p>
+ Audlib is an extensible tool for generating security-relevant application
+ level audit data on Unix systems.  Audlib is designed to supplement existing
+ audit systems and work transparently with them by providing information not
+ normally accessible to kernel level audit sources. This is accomplished using
+ a technique called 
+ <a href="http://developers.sun.com/solaris/articles/lib_interposers.html">library interposition</a>.
+ Interposition allows the generation of audit data
+ without needing to recompile either the system libraries or the application of
+ interest.  This allows us to generate audit data without changing the system
+ shared libraries or needing access to the source code for the executable on
+ which the interposition is to be performed. 
+</p>
+
+<h2>Design</h2>
+<p>
+The current version of Audlib consists of three interposable libraries, each of
+which is focused on producing information relevant to a particular class of
+security event.  These three categories are attacks, intrusions, and computer
+misuse.
+</p>
+
+<ul>
+    <li> 
+    <strong>Attacks</strong> - Attacks are attempts to exploit a
+    vulnerability in a computer system.  These include buffer overflow attacks,
+    format string attacks, and race conditions. For each type of attack, Audlib
+    logs data, like the size, address, and payload of the source buffer, which
+    is not available from typical kernel level audit sources.
+    </li>
+
+    <li>
+    <strong>Intrusion</strong> -  To detect intrusions, Audlib provides
+    information for detection systems which use command sequences to determine
+    when an impostor is masquerading as a legitimate user.  Additionally,
+    Audlib augments the record with information that can be used for basic
+    anomalous behavior detection.
+    </li>
+
+    <li>
+    <strong>Computer Misuse</strong> -  In addition to potential misuse
+    activities that kernel level audit systems might be able to supply
+    information about, Audlib also logs every read() and write() request made
+    by the target program.  This allows a very fine-grained level of monitoring
+    where detection is performed based on which <em>portions</em> of a file
+    were accessed.
+    </li>
+</ul>
+
+<h2 class="newsection" id="download">Download</h2>
+<p>
+    This is the source code to Audlib and the log reader.  We currently do not
+    supply any precompiled binaries.  Audlib was developed under GNU/Linux with
+    a recent version of the GCC compiler.  
+</p>
+<ul>
+    <li><a href="code/audlib-src-389.zip">Zip file</a> (build #389)</li>
+    <li><a href="code/audlib-src-389.tgz">GZipped tar file</a> (build #389)</li>
+</ul>
+
+<!-- 
+<h2 id="installation">Installation</h2>
+<p>
+To install Audlib, first compile the log reader.  To do this, issue the
+following commands from the top level folder:
+</p>
+
+<pre class="boxed">
+% cd audlogread
+% make
+</pre>
+
+<p>
+    Then to build Audlib itself:
+</p>
+
+<pre class="boxed">
+% cd ../audlib
+% ./configure.sh
+% cd src
+% make
+</pre>
+
+<p>
+    The various libraries will then be built.
+</p>
+
+<h3 id="running">Running Audlib</h3>
+<p>Audlib requires two environment variables to run properly</p>
+<ol class="padded">
+
+    <li><tt>AUDLIB</tt> should point to your top level Audlib directory</li>
+
+    <li><tt>AUDLIB_CONFIG</tt> specifies the location of the Audlib config
+    file. The default config file is located at
+    <tt>$AUDLIB/audlib_config</tt></li>
+</ol>
+
+<p>
+Once those are set, there are two main ways to run a program under audlib.
+</p>
+
+<ol>
+    <li> 
+    <p>First, set the proper environment variables to tell Audlib where to send
+    its log information.</p>
+
+    <p>For Example:</p>
+
+    <pre class="boxed">
+export AUDLIB_ATTACK=/path/to/audlib_attack.out
+export AUDLIB_INTRUSION=/path/to/audlib_intrusion.out
+export AUDLIB_MISUSE=/path/to/audlib_misuse.out </pre>
+
+    <p>
+    Then, specify that the Audlib libraries should be loaded. You may, for instance,
+    use the <tt>LD_PRELOAD</tt> variable. 
+    </p>
+
+    <pre class="boxed">
+LD_PRELOAD="./libaudlib_attack.so ./libaudlib_intrusion.so"</pre>
+</li>
+
+<li>Use the <tt>shellrun.sh</tt> or <tt>aud_run.rb</tt> tools located in the
+toplevel Audlib directory. Run <tt>./aud_run.rb -h</tt> or <tt>./shellrun.sh
+    -h</tt> to see command syntax and all available options. 
+
+Both tools require the Audlib log reader. Make sure to build it before running either script. aud_run.rb is written in Ruby, so that is also required to use aud_run.rb, while shellrun.sh is designed for bash.
+</li>
+</ol>
+
+</p>    
+-->
+
+<h2 class="newsection" id="papers">Papers and related projects</h2>
+
+<h3>Papers about Audlib</h3>
+
+<ul class="padded">
+    <li>
+    Benjamin A. Kuperman and Eugene H. Spafford. <u>Audlib: a configurable,
+    high-fidelity application audit mechanism</u>. <em>Software: Practice and
+    Experience</em>, 40(11):989-1005, 2010.
+    Available from: <a href="http://dx.doi.org/10.1002/spe.983">http://dx.doi.org/10.1002/spe.983</a>.
+    </li>
+
+    <li>
+    Nicholas Hatt<sup>*</sup>, Axis Sivitz<sup>*</sup>, and Benjamin A.
+    Kuperman. <u>Benchmarking operating systems</u>. <em>In Midstates Conference
+            for Undergraduate Research in Computer Science and Mathematics</em>, pages
+    63-68, November 2007.
+    [&nbsp;<a href="papers/audlib2007mcurcsm.pdf">PDF</a>&nbsp;|&nbsp;<a href="papers/audlib2007mcurcsm.txt">bib</a>&nbsp;]
+    </li>
+
+
+    <li>
+    Benjamin A. Kuperman. <u>A Categorization of Computer Security Monitoring
+        Systems and the Impact on the Design of Audit Sources</u>. PhD thesis,
+    Purdue University, West Lafayette, IN 47907-1398, August 2004.
+    [&nbsp;<a href="papers/kuperman2004phd.pdf">PDF</a>&nbsp;|&nbsp;<a href="papers/kuperman2004phd.txt">bib</a>&nbsp;]
+    </li>
+
+    <li>
+    Benjamin A. Kuperman and Eugene Spafford. 
+    <u>Generation of Application Level Data via Library Interposition</u>.
+    Technical Report CERIAS TR 1999-11, COAST Laboratory, Purdue University, West Lafayette, IN, October 1999.
+    [&nbsp;<a href="papers/kuperman1999interpose.pdf">PDF</a>&nbsp;|&nbsp;<a href="papers/kuperman1999interpose.txt">bib</a>&nbsp;]
+    </li>
+        
+</ul>
+
+<h3>Spinoff projects</h3>
+<p>
+    <a href="http://www.sccs.swarthmore.edu/org/trackle/">Trackle</a> is an
+    integrated system for tracking trouble tickets and the changes needed to
+    resolve them. This system is designed to be used in a training environment
+    where new admins are hired without necessarily being experts, but allow
+    them to learn from past instances of similar problems.
+</p>
+<p>
+    This system used Audlib's misuse audit data generation library as the basis
+    for its own file change tracking system.
+</p>
+
+<ul class="padded">
+    <li>
+    Daniel S. Crosta<sup>*</sup>, Matthew J. Singleton<sup>*</sup>, and Benjamin A. Kuperman.
+    <u>Fighting Institutional Memory Loss: The Trackle Integrated Issue and
+    Solution Tracking System</u>. <em>In Proceedings of LISA '06: 20th Large
+    Installation System Administration Conference</em>, pages 287-298, Washington,
+    DC, December 2006. USENIX Association.
+    [&nbsp;<a href="papers/trackle2006lisa.pdf">PDF</a>&nbsp;|&nbsp;<a href="papers/trackle2006lisa.txt">bib</a>&nbsp;|&nbsp;<a href="http://www.usenix.org/event/lisa06/tech/crosta.html">LISA&nbsp;'06</a>]
+    </li>
+
+    <li>Project website: <a href="http://www.sccs.swarthmore.edu/org/trackle/">http://www.sccs.swarthmore.edu/org/trackle/</a></li>
+</ul>
+
+<!--
+<h3>Interposition resources</h3>
+-->
+
+<!-- 
+<h2 class="newsection" id="acks">Acknowledgments</h2>
+
+<h3>Development</h3>
+
+<h3>Funding</h3>
+-->
+
+
+</div>  <!-- content -->
+
+</div>  <!-- container -->
+
+<!-- 
+    <h2></h2>
+
+-->
+<div style="clear: both; padding: 5px; "></div>
+
+<div id="footer">
+<address><small>Last Modified: September 09, 2011 - <a href="mailto:kuperman@cs.oberlin.edu">Benjamin A. Kuperman</a><a href="http://www.vim.org/"><img src="http://www.cs.oberlin.edu/~kuperman/images/vim.jpg" style="float: right;" alt="VI Powered"></a></small></address>
+</div>
+<!-- Created: May 20, 2010 -->
+
+</body>
+</html>
+

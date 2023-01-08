@@ -1,0 +1,233 @@
+/* Generic rules for everything */
+* {
+    margin: 0;
+    padding: 0;
+ }
+
+body {
+    color: #000000;
+    background-color: #DDDDDD;
+}
+
+h1 { font-size: 1.5em; }
+h2 { font-size: 1.3em; }
+h3 { font-size: 1.2em; }
+h4 { font-size: 1.0em; }
+h5 { font-size: 0.8em; }
+h6 { font-size: 0.6em; }
+
+li { margin-left: 1em; margin-top: 0.2em; }
+
+/* HEADER INFORMATION */
+#header {
+    min-height: 214px;
+    border-bottom: thin solid #990000;
+    /*
+    background-image: url(../csci100/images/keyboard.jpg); 
+    background-image: url(../images/king-bg.jpg); 
+    background-position: 50%  50%;
+    */
+    font-size: 1.1em;
+}
+div#portrait {
+    float: left;
+    text-align: center;
+    width: 280px;
+/*    width: 280px;   /* CHANGE WITH NEW PHOTO */
+}
+div#portrait img { width: 200px; padding: 10px; padding-top: 1em; margin: auto; }
+#contact { margin-left: 280px; }
+#contact p { padding: 1em 0; vertical-align: bottom; }
+#contact p span { padding-left: 10px; border-left: thin solid #990000; }
+#contact span    { display: block; }
+#contact .name   { font-size: 180%; }
+#contact .title  { font-size: 160%; }
+#contact .office { padding-top: 1em; }
+#contact .office:before  { content: "Office: "; }
+#contact .phone:before  { content: "Phone: "; }
+#contact .fax:before    { content: "Fax: "; }
+#contact .email  { font-family: monospace; font-size: 120%; }
+
+#contact .departure { padding-top: 1em; padding-bottom: 1em; }
+#contact .linkedin { padding-bottom: 1em; }
+#contact .questions { width: 40em; font-size: 80%; }
+.departure, .linkedin {  }
+.highlight { background-color: lightyellow; }
+
+
+/* TAGLINE */
+div#tagline {
+    text-align: left;
+    background-color: white;
+    border-top: thin solid #990000;
+    border-bottom: thin solid #990000;
+    margin: 0;
+    display: none;
+}
+div#tagline p { margin: 0.2em 1em;}
+
+/* MAIN CONTAINER */
+div#container {
+    clear: both;
+    margin: 1em;
+}
+
+/* FULL PAGE CONTAINER */
+div#fullpage {
+    /*
+    width: 800px;
+    margin: 0 auto;
+    background-color: #DDDDDD;
+    border-left: 3px double #990000;
+    border-right: 3px double #990000;
+    */
+}
+
+
+/* MENU TO LOCAL LINKS */
+div#menu {
+    width: 8em;
+    float: left;
+    border-right: thin solid #990000;
+}
+
+div#menu li {
+    margin: 0;
+    font-weight: normal;
+    list-style-type: none;
+    list-style-position: inside;
+    border-bottom: 1px dotted #990000;
+}
+div#menu a { 
+    display: block;
+    padding: 0.2em 0;
+}
+div#menu a:hover { background-color: white; }
+
+div#menu ul {
+    margin: 0.5em 0 1em 0;
+}
+div#menu li {
+    line-height: 1.1em;
+}
+
+/* MAIN CONTENT AREA */
+div#content {
+    margin-left: 9em;
+}
+
+div#content h1 {
+    padding-top: 0.5em;
+    border-top: thin solid #990000;
+    margin-top: 0.5em;
+}
+div#content h1:first-child {
+    padding-top: 0;
+    border-top: none;
+    margin-top: 0;
+}
+div#content p+p { margin-top: 1em; line-height: 1.2em;}
+
+/* schedule */
+table#sched_table {
+    padding: 10px;
+    border-collapse: collapse;
+    border: thin solid black;
+    background-color: #eeeeee;
+    /*
+    width: 100%;
+    */
+}
+table#sched_table th,
+table#sched_table tr,
+table#sched_table td {
+    padding: 5px;
+    border: thin solid black;
+}
+
+table#sched_table tr:hover { background-color: white; }
+
+table#sched_table th {
+    text-align: center;
+    background-color: #990000;
+    color: white;
+    font-size: 1.2em;
+}
+
+/* research */
+table.research_table {
+    border: none;
+    width: 90%;
+    margin: 0 auto;
+}
+table.research_table th,
+table.research_table tr,
+table.research_table td {
+    padding: 5px;
+}
+
+table.research_table tr {
+    padding: 1em;
+}
+
+table.research_table tr td {
+    background-color: #eeeeee;
+}
+table.research_table tr td:first-child {
+    background-color: #DDDDDD;
+    font-weight: bold;
+    font-variant: small-caps;
+    text-align: right;
+    vertical-align: top;
+}
+
+img.right_image {
+    float: right;
+    margin: 10px;
+}
+
+/* might be needed */
+.padded li { 
+    padding: 0pt 0pt 8pt 0pt;
+}
+
+/* past courses */
+table#courses_table ul {
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+}
+span.courses_semester {
+    font-weight: bold;
+    text-decoration: underline;
+}
+tr.course_swat {
+    font-size: 0.8em;
+}
+
+/* FOOTER */
+div#footer {
+    border-top: thin solid #990000;
+    margin-top: 10px;
+    clear: both;
+}
+/* div#footer a img { border: none; margin-top: -1em; } */
+
+@media screen {
+    body {
+        font-family: Helvetica, Arial, Verdana, sans-serif;
+        font-size: 0.9em;
+    }
+
+    /* For the links */
+    a { font-weight: bold; }
+    a:link {text-decoration: none; color: #990000;}
+    a:visited {text-decoration: none; color: #990000;}
+    a:hover {text-decoration: underline; color: #FF0000;}
+}
+
+@media print {
+    a:link, a:visited, a:hover {text-decoration: none; color: black; font-weight: inherit; }
+    div#menu { display: none; }
+    div#content { margin-left: inherit; }
+    body { background-color: white; }
+}

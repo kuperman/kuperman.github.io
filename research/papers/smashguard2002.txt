@@ -1,0 +1,11 @@
+
+@techreport{smashguard2002,
+        Author = {Hilmi {\"Ozdo\~gano\~glu} and T.~N. Vijaykumar and Carla E. Brodley and Ankit Jalote and Benjamin A.\ Kuperman},
+        Institution = {Purdue University School of Electrical and Computer Engineering},
+        Address = {West Lafayette, IN},
+        Month = dec,
+        Number = {TR-ECE 02-08},
+        Title = {{SmashGuard: A Hardware Solution to Prevent Attacks on the Function Return Address}},
+        Year = {2002},
+}
+

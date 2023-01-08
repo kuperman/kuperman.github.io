@@ -1,0 +1,15 @@
+@article{smashguard2005acm,
+    Author = {Benjamin A. Kuperman and Carla Brodley and Hilmi {\"Ozdo\~gano\~glu} and T.~N. Vijaykumar and Ankit Jalote},
+    Journal = {Communications of the {ACM}},
+    Month = nov,
+    Number = {11},
+    Pages = {50--56},
+    Title = {Detection and Prevention of Stack Buffer Overflow Attacks},
+    Volume = {48},
+    Year = {2005},
+    issn = {0001-0782},
+    doi = {http://doi.acm.org/10.1145/1096000.1096004},
+    publisher = {ACM},
+    address = {New York, NY, USA},
+}
+

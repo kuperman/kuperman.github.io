@@ -1,0 +1,9 @@
+
+@misc{kuperman2001raid,
+        Author = {Mark J.\ Crosbie and Benjamin A.\ Kuperman},
+        Howpublished = {Short paper presented at RAID 2001},
+        Month = sep,
+        Title = {{A Building Block Approach to Intrusion Detection}},
+        Year = 2001,
+}
+

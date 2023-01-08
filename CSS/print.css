@@ -1,0 +1,19 @@
+body {
+    background: white;
+    color: black;
+    font-size: 10pt;
+    font-family: serif;
+    /*
+      margin-left: 5%;
+      margin-right: 5%;
+      font-family: serif;
+    font-family: cursive;
+    */
+}
+a, tt, .notice, #handin, em   {
+	color:black;
+	background-color: white;
+}
+a {
+	text-decoration: underline;
+}

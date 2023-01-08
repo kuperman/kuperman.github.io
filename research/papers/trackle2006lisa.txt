@@ -1,0 +1,14 @@
+
+@inproceedings{trackle2006lisa,
+        Author = {Daniel S. Crosta and Matthew J. Singleton and Benjamin A. Kuperman},
+        Booktitle = {Proceedings of LISA '06: 20th Large Installation System Administration Conference},
+        Month = dec,
+        Pages = {287--298},
+        Publisher = {USENIX Association},
+        address = {Berkeley, CA, USA},
+        location = {Washington, DC},
+        Title = {{Fighting Institutional Memory Loss: The Trackle Integrated Issue and Solution Tracking System}},
+        Year = {2006},
+}
+
+

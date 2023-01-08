@@ -1,0 +1,8 @@
+
+@misc{kuperman2006patent2,
+        Author = {Mark Crosbie and Benjamin Kuperman and Rosemarie Shepley and Leonard L.\ Frayman},
+        Month = nov,
+        Title = {{US Patent \#7,134,141: System and Method for Host and Network Based Intrusion Detection and Response}},
+        Year = 2006
+}
+

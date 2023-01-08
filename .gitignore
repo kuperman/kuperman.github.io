@@ -4,3 +4,9 @@
 # skip other temp files
 *~
 .DS_Store
+
+# Skip RCS folders
+RCS
+
+# Skip SOURCES
+SOURCES

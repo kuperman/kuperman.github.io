@@ -1,0 +1,11 @@
+
+
+@inproceedings{cerias2002worms,
+        Author = {{The {CERIAS} Intrusion Detection Research Group}},
+        Booktitle = {Proceedings of the 18th Annual Computer Security Applications Conference (ACSAC'02)},
+        Month = {December},
+        Pages = {219--226},
+        Title = {Digging For Worms, Fishing For Answers},
+        Year = {2002},
+}
+

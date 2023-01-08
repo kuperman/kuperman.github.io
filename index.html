@@ -2,33 +2,344 @@
 <html>
 <head>
 
-<title>Test homepage</title>
-<link rev="made" href="mailto:kuperman@acm.org">
+<title>Oberlin College Computer Science: Benjamin A. Kuperman</title>
+<link rev="made" href="mailto:Benjamin.Kuperman@oberlin.edu">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<link rel=stylesheet type="text/css" href="CSS/links.css">
+<link rel=stylesheet type="text/css" href="CSS/home.css">
+<meta name="verify-v1" content="orAK9d1exV9+9Fpw+uFc5zIWQXNkuaonwaw11hTCYsQ=">
 
 <style type="text/css">
 <!--
-body {
-    background-color: #FFFFFF;
-    color: #000000;
-}
-
-h1 {
-    text-align: center;
-}
+li.spacer { list-style: none; }
 -->
 </style>
-
 </head>
+
 <body>
 
-<h1>Testing Github Pages</h1>
+<div id="fullpage">
+<div id="header">
+    <div id="portrait">
+        <p><img src="images/kuperman.jpg" alt="Kuperman"></p>
+    </div>
+    <div id="contact">
+        <p>
+        <span class="name">Benjamin A. Kuperman</span>
+        <span class="title">Former Associate Professor and Chair</span>
+        <span class="dept"><a href="http://www.cs.oberlin.edu">Computer Science Department</a></span>
+        <span class="school"><a href="http://www.oberlin.edu">Oberlin College</a></span>
+        <span class="departure highlight">&#128073; As of January 2017, I am no longer faculty at Oberlin College. &#128072;
+            <br><br>
+            These pages are not being maintained and are likely out of date.
+        </span>
+        <span class="questions">
+            For questions about the CS department, please contact the Oberlin College Computer Science administrative assistant  (440-775-8043) or the department chair. Information can be found at <a href="https://www.oberlin.edu/arts-and-sciences/departments/computer-science">https://www.oberlin.edu/arts-and-sciences/departments/computer-science</a>
+        </span>
+        </p>
+    </div>
+</div>
 
-<p>Sample text here</p>
+<div id="tagline">
+    <p>
+        Computer security rocks!
+    </p>
+</div>
 
-<hr>
-<address><small>Last Modified: January 08, 2023 - <a href="mailto:kuperman@acm.org">kuperman</a><a href="http://www.vim.org/"><img src="./images/vim.jpg" style="float: right;" alt="VI Powered"></a></small></address>
-<!-- Created: TIMESTAMP -->
+<div id="container">
+
+<div id="menu">
+    <h2>Navigation</h2>
+    <ul>
+        <li><a href="#header">Contact</a></li>
+        <!-- <li><a href="#Schedule">Schedule</a></li> --> 
+        <li><a href="#Research">Research</a></li>
+        <!-- <li><a href="#Background">Background</a></li> --> 
+        <li><a href="#Organizations">Organizations</a></li>
+        <!-- <li><a href="#Courses">Past Courses</a></li> --> 
+        <li><a href="#Random">Fun Links</a></li>
+    </ul>
+
+    <h2>Research</h2>
+    <ul>
+        <li><a href="research/pubs.html">Publications</a></li>
+        <li><a href="research/students.html">Past Students</a></li>
+        <li><a href="research/audlib.html">Audlib</a></li>
+        <li><a href="#xenlabs">XenLabs</a></li>
+        <li><a href="https://engineering.purdue.edu/ResearchGroups/SmashGuard/smash.html">Smashguard</a></li>
+        <li><a href="http://www.sccs.swarthmore.edu/org/trackle/">Trackle</a></li>
+    </ul>
+
+    <h2>Software</h2>
+    <ul>
+        <li><a href="help/index.html">Local help pages</a></li>
+        <!-- 
+        <li class="spacer">&nbsp;</li>
+        -->
+        <li><a href="help/vim/index.html">Vim Tips</a></li>
+        <li><a href="http://grabcartoons.sourceforge.net/">GrabCartoons</a></li>
+        <!-- 
+        <li class="spacer">&nbsp;</li>
+        -->
+        <li><a href="help/letters_of_rec.html">Letters of rec.</a></li>
+    </ul>
+
+    <h2>Other Links</h2>
+    <ul>
+        <li><a href="http://www.oberlin.edu/">Oberlin College</a></li>
+        <li><a href="http://www.cs.oberlin.edu/">Computer Science Department</a></li>
+    </ul>
+</div><!-- menu -->
+
+<div id="content">
+
+    <h1 id="Research">Research</h1>
+
+    <p>
+        My research is in the field of Information Security.  Specifically, I
+        am interested in host-based attack, intrusion, and misuse
+        prevention/detection, as well as the design and construction of audit
+        sources that can supply information for the detection/prevention of the
+        same.  I am also interested in computer forensics and the application
+        of machine learning techniques to the analysis of audit information.
+    </p>
+
+    <p>
+        I maintain a list of my <a href="research/pubs.html">research publications</a> online.
+    </p>
+
+    <p>
+        Current projects include:
+    </p>
+    <table id="research_table" class="research_table" summary="Brief summary of current research projects">
+    <tr id="lexicostatistics">
+        <td>Uto-Aztecan Lexicostatistics</td>
+        <td>
+            <p>
+                A cross-disciplinary project looking at the application of
+                clustering and phylogenetic tools to examine the interconnections
+                between a number of Uto-Aztecan Languages
+            </p>
+            <p>
+            This project is a collaborations with <a href="http://new.oberlin.edu/arts-and-sciences/departments/anthropology/faculty_detail.dot?id=1110548">Jason Haugen</a> from Anthropology and Michael Everdell '13.
+            </p>
+        </td>
+    </tr>
+
+    <tr> <td></td> </tr>
+
+    <tr id="osaudit">
+        <td>Open Source Audit Systems</td>
+        <td>
+            <p>An investigation into the current state of open source audit systems.
+            We are looking at initial configuration, runtime overhead, and performance under load.
+            </p>
+
+        <p>Currently examining the audit systems in GNU/Linux, SELinux, Solaris, Mac OS X.</p>
+
+        <!-- 
+        <p> <a href="research/osaudit.html">Open Source Audit Systems Project Page</a> </p>
+        -->
+        </td>
+    </tr>
+
+    <tr> <td></td> </tr>
+
+    <tr id="xenlabs">
+        <td>XenLabs</td>
+        <td>
+        <p>Using modern VM technology to create a virtual laboratory of
+        machines that students can use for "hands-on" security exercises.
+        Students (or groups of students) can have an identical set of machines
+        where they have full control, but are encapsulated from the each other
+        and the rest of the network.  Also, security exercises that use flaws
+        in a particular OS version can remain viable for longer periods.</p>
+
+        <p>We are collaborating with folks at Iowa State and SUNY Oswego on
+        this project.</p>
+
+        <p> <a href="http://www.cs.oberlin.edu/~xenlabs/">XenLabs Project Page</a> </p>
+        </td>
+    </tr>
+
+    <tr> <td></td> </tr>
+
+    <tr id="prestissimo">
+        <td>Prestissimo</td>
+        <td>
+        <p>I sponsor and help out with 
+        <a href="https://oprestissimo.com/">Prestissimo</a> -- a student
+        inspired and implemented search engine that combines the information
+        from the Oberlin 
+        <a href="http://new.oberlin.edu/office/registrar/class-schedules/">Schedule of Classes</a>
+        with the 
+        <a href="http://catalog.oberlin.edu/">Course Catalog</a>
+        so that students can more easily search by time, level, department,
+        instructor, or course attributes.</p>
+
+        <p> <a href="https://oprestissimo.com/">Prestissimo</a> </p>
+        </td>
+    </tr>
+
+    <tr> <td></td> </tr>
+
+    <tr id="audlib">
+        <td>Audlib</td>
+        <td>
+        <p>An interposable library to generate audit information from existing
+        applications.</p>
+
+        <p>Building tailored audit sources to supply information directed
+        towards one or more of attack, intrusion, or misuse detection.</p>
+
+        <p> <a href="research/audlib.html">Audlib Project Page</a> </p>
+        </td>
+    </tr>
+
+    <tr> <td></td> </tr>
+
+
+    </table>
+
+
+    <p>
+        Past research projects include:
+    </p>
+    <ul class="padded">
+        <li><a>Browser-Level Event Logging</a> -
+                Collecting user activity and web browser logs, along with web
+                server response time information by instrumenting the web browser
+                through the use of a plugin.
+        </li>
+
+        <li><a href="http://www.sccs.swarthmore.edu/org/trackle/">Trackle</a> - 
+            An integrated system for tracking trouble tickets and the changes
+            needed to resolve them. This system is designed to be used in a
+            training environment where new admins are hired without necessarily
+            being experts, but allow them to learn from past instances of
+            similar problems.
+        </li>
+        <li>
+        <a href="https://engineering.purdue.edu/ResearchGroups/SmashGuard/smash.html">SmashGuard</a> -
+            A hardware modification to detect and prevent attacks on saved
+            return address pointers (buffer overflow or "stack smashing"
+            attacks).
+        </li>
+        <li><a href="http://www.cerias.purdue.edu/about/history/coast/projects/aafid.php">AAFID</a> - Autonomous Agents for Intrusion Detection</li>
+        <li><a href="http://www.cerias.purdue.edu/about/history/coast/projects/vdb.html">Vulnerability Database (VDB)</a> - precursor project to the <a href="http://cve.mitre.org/">CVE</a> and later the <a href="http://nvd.nist.gov/">NVD</a></li>
+        <li>Hewlett-Packard's <a href="http://www.hp.com/security/products/ids/">IDS/9000</a> (now HP-UX HIDS)- I was one of the software engineers and designer/author of the initial release's detection logic.</li>
+    </ul>
+
+
+    <h1 id="Organizations">Organizations</h1>
+    <table id="organization_table" class="research_table" summary="Brief summary of current organizational involvement">
+    <tr id="pledge">
+    <td>Pledge of the Computing Professional</td>
+    <td>
+        <p>
+        <img src="images/pledge-logo-small.jpg" alt="Pledge Logo" id="pledge-logo" class="right_image" width="100">
+        Modeled after the <a href="http://www.order-of-the-engineer.org/">Order
+            of the Engineer</a>, 
+        The Pledge of the Computing Professional is an organization designed
+        to promote responsible behavior in computing professionals through a
+        public ceremony near the time of graduation.  The Pledge asks students
+        to recognize that they have moral and ethical responsibilities to
+        society, that the work they do can affect people's lives, and that they
+        should use their computing skills honorably and for the public good.
+        Graduating students are invited to take The Pledge, and those that
+        choose to do so take The Pledge at a public ceremony. 
+        </p>
+
+
+        <p>
+        I am one of the founding members and currently serve as the Secretary
+        on the Board of Directors.<br>
+        </p>
+        <p>
+        <a href="http://computing-professional.org/">http://computing-professional.org/</a>
+        </p>
+    </td>
+    </tr>
+
+    <tr> <td></td> </tr>
+
+    <tr id="ACSAC">
+    <td>ACSAC</td>
+    <td>
+        <p>
+        I was the Poster and WiPs chair for the 
+        <a href="https://www.acsac.org/">Annual Computer Security Applications
+            Conference</a> (ACSAC) from 2010-2012.
+        </p>
+    </td>
+    </tr>
+
+    <tr> <td></td> </tr>
+
+    <tr id="MCURCSM">
+    <td>MCURCSM</td>
+    <td>
+        <p>
+            The Midstates Conference For Undergraduate Research in Computer
+            Science and Mathematics (MCURCSM) is designed to showcase
+            undergraduate student research in computer science and mathematics.
+            I was one of the co-chairs (along with <a href="http://www.cs.oberlin.edu/~asharp/">Alexa Sharp</a>
+            and <a href="http://www.oberlin.edu/faculty/kwoods/">Kevin Woods</a>) when Oberlin College hosted
+            the conference in <a href="http://2009.mcurcsm.org/">2009</a>.
+        </p>
+    </td>
+    </tr>
+
+    <tr> <td></td> </tr>
+
+    <tr id="APCS">
+    <td>APCS</td>
+    <td>
+        <p>
+        I've been an <a href="https://apstudent.collegeboard.org/apcourse/ap-computer-science-a">AP Computer Science</a> reader off-and-on since 2008.
+        </p>
+    </td>
+    </tr>
+
+    <tr> <td></td> </tr>
+
+    <tr id="ACM">
+    <td>ACM</td>
+    <td>
+        I'm a member of the <a href="http://www.acm.org/">Association for Computing Machinery</a> 
+        and involved with <a href="http://www.sigcse.org/">SIGCSE</a> 
+        and <a href="http://www.sigsac.org/">SIGSAC</a>.
+    </td>
+    </tr>
+    </table>
+
+    <!-- <h1 id="Background">Background</h1> --> 
+    <h1 id="Education">Education</h1>
+    <ul>
+        <li>Ph.D. <a href="http://www.cs.purdue.edu/">Computer Sciences</a>, <a href="http://www.purdue.edu/">Purdue University</a>, 2004 <a href="http://www.cerias.purdue.edu/"><img src="images/cerias_alumnus_32.png" title="Purdue alumnus badge" alt="Purdue alumnus badge" width=32 height=32 /></a></li>
+        <li>M.S. <a href="http://www.cs.purdue.edu/">Computer Sciences</a>, <a href="http://www.purdue.edu/">Purdue University</a>, 1999</li>
+        <li>B.S.E. <a href="http://www.eecs.utoledo.edu/">Computer Science and Engineering</a>, <a href="http://www.utoledo.edu/">University of Toledo</a>, 1997</li>
+        <li>B.S. <a href="http://www.math.utoledo.edu/">Mathematics</a>, <a href="http://www.utoledo.edu/">University of Toledo</a>, 1997</li>
+    </ul>
+
+<h1 id="Random">Fun Links</h1>
+<ul>
+    <li>Hardcore Geek Rap? Check out <a href="http://www.mcplusplus.com/">MC Plus+</a> -- formerly a grad student at Purdue</li>
+    <li>Learn to secure CyberSpace!  Go <a href="http://www.mysecurecyberspace.com/">here</a> and click on the <a href="http://www.mysecurecyberspace.com/game/">game for children</a>.</li>
+    <li>The <a href="http://www.nsa.gov/">NSA</a>, now <a href="http://www.nsa.gov/kids/">for kids</a>! (Plus <a href="http://www.cia.gov/cia/ciakids/index.shtml">CIA</a>, <a href="http://www.fbi.gov/fbikids.htm">FBI</a>, and <a href="http://www.nrojr.gov/">NRO</a>)</li>
+</ul>
+
+</div><!-- content -->
+
+</div><!-- container -->
+
+<div id="footer">
+<address><small>Last Modified: July 20, 2018 - <a href="mailto:Benjamin.Kuperman@oberlin.edu">Benjamin A. Kuperman</a><a href="http://www.vim.org/"><img src="images/vim.jpg" style="float: right;" alt="VI Powered"></a></small></address>
+</div>
+
+</div><!-- fullpage -->
 
 </body>
 </html>

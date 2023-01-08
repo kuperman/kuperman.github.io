@@ -1,0 +1,11 @@
+
+@inproceedings{kuperman2001sreis,
+        Address = {West Lafayette, Indiana},
+        Author = {Mark Crosbie and Benjamin Kuperman},
+        Booktitle = {Proceedings of the 1st Symposium on Requirements Engineering for Information Security},
+        Organization = {CERIAS and NCSU E-Commerce and ACM},
+        Publisher = {CERIAS, Purdue University},
+        Title = {{Experiences in Specifications: Learning to Live With Ambiguity}},
+        Year = 2001,
+}
+

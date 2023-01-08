@@ -1,0 +1,12 @@
+@article{xenlabs2010ccsc,
+    author = {Nathaniel W.\ Gephart and Benjamin A.\ Kuperman},
+    title = {Design of a virtual computer lab environment for hands-on information security exercises},
+    journal = {J. Comput. Small Coll.},
+    volume = {26},
+    number = {1},
+    year = 2010,
+    issn = {1937-4771},
+    pages = {32--39},
+    publisher = {Consortium for Computing Sciences in Colleges},
+    address = {USA},
+}

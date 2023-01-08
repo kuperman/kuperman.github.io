@@ -1,0 +1,8 @@
+
+@misc{kuperman2006p1,
+        Author = {Mark Crosbie and Benjamin Kuperman and Rosemarie Shepley and Leonard L.\ Frayman},
+        Month = feb,
+        Title = {{US Patent \#7,007,301: Computer Architecture for an Intrusion Detection System}},
+        Year = 2006
+}
+

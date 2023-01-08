@@ -1,0 +1,11 @@
+
+@techreport{kuperman1999interpose,
+        Author = {Benjamin A. Kuperman and Eugene Spafford},
+        Title = {{Generation of Application Level Data via Library Interposition}},
+        Month = oct,
+        Institution = {{COAST Laboratory, Purdue University}},
+        Address = {West Lafayette, IN},
+        Number = {{CERIAS TR 1999-11}},
+        Year = 1999,
+}
+

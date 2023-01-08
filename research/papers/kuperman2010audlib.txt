@@ -1,0 +1,16 @@
+
+@article{kuperman2010audlib,                                          
+    author = {Benjamin A.\ Kuperman and Eugene H.\ Spafford},          
+    title = {Audlib: a configurable, high-fidelity application audit mechanism},
+    journal = {Software: Practice and Experience},                     
+    volume = {40},                                                     
+    number = {11},                                                     
+    publisher = {John Wiley & Sons, Ltd.},                             
+    issn = {1097-024X},                                                
+    url = {http://dx.doi.org/10.1002/spe.983},                         
+    doi = {10.1002/spe.983},                                           
+    pages = {989--1005},                                               
+    keywords = {audit systems, computer security monitoring, attack detection, intrusion detection, misuse detection},
+    year = {2010},                                                     
+}  
+

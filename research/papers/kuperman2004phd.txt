@@ -1,0 +1,9 @@
+
+@phdthesis{kuperman2004phd,
+        Author = {Benjamin A.\ Kuperman},
+        Month = aug,
+        School = {Purdue University},
+        Address = {West Lafayette, IN 47907-1398},
+        Title = {A Categorization of Computer Security Monitoring Systems and the Impact on the Design of Audit Sources},
+        Year = {2004},
+}

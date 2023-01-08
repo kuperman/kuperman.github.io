@@ -1,0 +1,102 @@
+/* Generic rules for everything */
+body {
+    color: #000000;
+    /*
+    background-color: #DDDDDD;
+    */
+    background-color: #ffffff;
+    font-family: Helvetica, Arial, Verdana, sans-serif;
+    font-size: 11pt;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+.padded li { padding: 0pt 0pt 8pt 0pt; }
+.padded li li { padding: 0pt; }
+
+p.boxed  { 
+    width: 80%;
+    text-align: left;
+    padding: 6pt; 
+    border: 2pt solid black; 
+}
+
+tt {
+    font-weight: bold;
+    font-size: 110%;
+    color: blue;
+    background: white;
+}
+tt:hover { background: #FFFFbb; }
+
+.notice {
+	background-color: yellow;
+	color: red;
+	font-size: 120%;
+}
+
+.centered {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.float-right {
+    float: right;
+}
+strong {
+    padding: 4px;
+    font-size: 120%;
+}
+
+em {
+    font-weight: bold;
+    font-style: normal;
+    color: red;
+    background: white;
+}
+
+em:hover { background: yellow; }
+
+ol.alpha { list-style-type: upper-alpha; }
+
+pre.boxed {
+    border: thin solid black;
+    margin: 0.2em;
+    padding: 0.5em;
+    background-color: #ffffcc;
+}
+
+.typed { font-weight: bold; color: green; }
+.argument { color: #ff5dee; }
+
+@media print {
+    body {
+        background: white;
+        color: black;
+        font-size: 10pt;
+        font-family: serif;
+        /*
+        margin-left: 5%;
+        margin-right: 5%;
+        font-family: serif;
+        font-family: cursive;
+         */
+    }
+
+    a, tt, .notice, #handin, em, q.honor, .typed, .typed *  {
+        color:black;
+        background-color: white;
+    }
+
+    tt { font-size: 100%; }
+
+    a { text-decoration: underline; }
+
+    p { text-align: justify; }
+}

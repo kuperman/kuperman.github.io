@@ -1,0 +1,8 @@
+
+@misc{kuperman2009patent1,
+        Author = {Mark Crosbie and Benjamin Kuperman},
+        Month = aug,
+        Title = {{US Patent \#7,577,998: Method of detecting critical file changes}},
+        Year = 2009
+}
+

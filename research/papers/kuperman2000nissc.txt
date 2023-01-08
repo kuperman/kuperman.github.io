@@ -1,0 +1,11 @@
+
+@inproceedings{kuperman2000nissc,
+        Author = {Thomas E.\ Daniels and Benjamin A.\ Kuperman and Eugene H.\ Spafford},
+        Booktitle = {Proceedings of the 23rd National Information Systems Security Conference},
+        Month = oct,
+        Organization = {NIST and NCSC},
+        Pages = {167--178},
+        Title = {{Penetration Analysis of a XEROX Docucenter DC230ST: Assessing the Security of a Multi-purpose Office Machine}},
+        Year = 2000,
+}
+

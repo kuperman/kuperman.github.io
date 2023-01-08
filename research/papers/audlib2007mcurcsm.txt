@@ -1,0 +1,10 @@
+
+@inproceedings{audlib2007mcurcsm,
+        Author = {Nicholas Hatt and Axis Sivitz and Benjamin A. Kuperman},
+        Booktitle = {Midstates Conference for Undergraduate Research in Computer Science and Mathematics ({MCURCSM} 2007)},
+        Month = nov,
+        Pages = {63--68},
+        Title = {Benchmarking Operating Systems},
+        Year = {2007},
+}
+

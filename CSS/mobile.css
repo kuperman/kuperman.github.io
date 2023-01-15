@@ -1,0 +1,30 @@
+
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 1em;
+    }
+
+    #contact .questions { width: auto; font-size: 80%; }
+
+    div#portrait {
+        display: none;
+    }
+
+    div#menu {
+        display: none;
+    }
+
+    div#content { margin-left: 0; }
+    div#contact { margin-left: 0; }
+
+    table#research_table td {
+        display: block;
+    }
+    table.research_table tr td:first-child {
+        text-align: left;
+    }
+
+    table#organization_table td {
+        display: block;
+    }
+}

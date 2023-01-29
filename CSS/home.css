@@ -231,3 +231,7 @@ div#footer {
     div#content { margin-left: inherit; }
     body { background-color: white; }
 }
+
+/* clearing out portrait */
+div#portrait { display: none; }
+#contact { margin-left: 8em; }
